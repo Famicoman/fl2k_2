@@ -89,7 +89,7 @@ endif()
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
     ${LIBUSB_INCLUDE_DIR}
-    ${Soxr_INCLUDE_DIRS}
+	${Soxr_INCLUDE_DIRS}
     ${THREADS_PTHREADS_INCLUDE_DIR}
 )
 

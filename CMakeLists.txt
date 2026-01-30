@@ -19,7 +19,7 @@
 ########################################################################
 # Project setup
 ########################################################################
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.6...4.0)
 project(libosmo-fl2k C)
 
 include(GNUInstallDirs)
@@ -60,6 +60,7 @@ if(CMAKE_COMPILER_IS_GNUCC AND NOT WIN32)
     ADD_DEFINITIONS(-Wdeclaration-after-statement)
     #http://gcc.gnu.org/wiki/Visibility
     add_definitions(-fvisibility=hidden)
+    add_definitions(-fpermissive)
 endif()
 
 ########################################################################
@@ -88,7 +89,7 @@ endif()
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
     ${LIBUSB_INCLUDE_DIR}
-	${Soxr_INCLUDE_DIRS}
+    ${Soxr_INCLUDE_DIRS}
     ${THREADS_PTHREADS_INCLUDE_DIR}
 )
 

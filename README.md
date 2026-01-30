@@ -10,9 +10,7 @@ This project fork is primarily for use with playing TBC files, but it can also b
 
 A Simple TBC playback utility, currently only CLI (Command Line Interface)
 
-This will later be both GUI/CLI.
-
-## What is a TBC filr?
+## What is a TBC file?
 
 A TBC (.tbc) file is a digital _Time Base Corrected_, lossless, 16-bit video file. Typically, one file is used for composite video streams and two files are used for s-video streams.
 
@@ -36,54 +34,41 @@ VGA to BNC Male/Female [Amazon UK](https://www.amazon.co.uk/gp/product/B0033AF5Y
 
 #### Composite
 
-Red - Right Audio
-
-Blue - Left Audio
-
-Green - Composite Video
+* Red - Right Audio
+* Blue - Left Audio
+* Green - Composite Video
 
 #### S-Video
 
-Green - Lumanace Y
-
-Blue - Chroma C
-
-Red - Mono/Mono Mix Audio
+* Green - Lumanace Y
+* Blue - Chroma C
+* Red - Mono/Mono Mix Audio
 
 ## Software Setup
 
 ### Windows
 
-Download and install the stock driver [FL2000 Stock Driver](https://github.com/vrunk11/fl2k_2/fl2k_2/resources/FL2000-Driver-2.1.33676.0.exe)
+#### Driver Installation
 
-Then select and replace the driver with libusb-win32 (v1.2.6.0) using [Zagig Driver Tool](https://github.com/vrunk11/fl2k_2/fl2k_2/resources/zadig-2.7.exe)
+Download and install the stock driver [FL2000 Stock Driver](resources/FL2000-Driver-2.1.33676.0.exe)
 
-Simply download the latest [Windows Release](https://github.com/vrunk11/fl2k_2/releases).
+Then select and replace the driver with `libusb-win32 (v1.2.6.0)` using the [Zagig Driver Tool](resources/zadig-2.7.exe)
 
-Decompress the .zip file.
+#### Player Installation
 
-For GUI users
+Simply download the latest [Windows release](https://github.com/vrunk11/fl2k_2/releases). and decompress the `.zip` file.
 
-Open the fl2k_2.bat file.
+For GUI users, open the `fl2k_2.bat` file.
 
-For CLI users
-
-Open an CMD Window and then open the directory your files are in, copy the path and add cd to the start example:
-
-    cd C:\Users\harry\Desktop\fl2k
-
-Once inside use arguments as stated below example:
-
-    fl2k-2.exe -u -s pal -G16 -tbcG -G example.tbc
-
+For CLI users, open a Command Prompt window and change to the directory your files are in. See the section below on _Usage_ for running the application.
 
 ### Linux
 
-*NOTE: The Linux version currently does not work as expected. Follow the below at your own risk.*
+__NOTE: The Linux version currently does not work as expected. Follow the below at your own risk.__
 
 The instructions below assume a non-root, `sudo`-capable user on a Debian-based distribution.
 
-first we need to download dependencies:
+First we need to download dependencies:
 
 ```
 sudo apt update && sudo apt install libusb-1.0-0-dev libsoxr-dev libsoxr0 libsoxr-lsr0 git
@@ -119,7 +104,7 @@ chmox +x compile.sh
 
 ## Usage
 
-Only the __Red__ lead is supported for video output.
+__NOTE: Only the _Red_ lead is supported for video output.__
 
 ### Composite output on the red channel:
 
@@ -139,11 +124,15 @@ fl2k_file2.exe -s ntsc -R16 -tbcR -R example-decode.tbc
 
 Linux:
 
-`fl2k_file2 -u -s pal -G16 -tbcG -G example.tbc -B16 -tbcB -B example_chroma.tbc`
+```
+fl2k_file2 -u -s pal -G16 -tbcG -G example.tbc -B16 -tbcB -B example_chroma.tbc
+```
 
 Windows:
 
-`fl2k_2.exe -u -s pal -G16 -tbcG -G example.tbc -B16 -tbcB -B example_chroma.tbc`
+```
+fl2k_2.exe -u -s pal -G16 -tbcG -G example.tbc -B16 -tbcB -B example_chroma.tbc
+```
 
 ### Arguments
 
@@ -219,7 +208,7 @@ echo 0 > /sys/module/usbcore/parameters/usbfs_memory_mb
 reboot now
 ```
 
-This will result in better I/O stability and reduced CPU usage. This config was added to the kernel [back in 2014](https://lkml.org/lkml/2014/7/2/377). The default buffer size is 16.
+This will result in better I/O stability and reduced CPU usage. This patch was added to the kernel [back in 2014](https://lkml.org/lkml/2014/7/2/377). The default buffer size is 16.
 
 ## Attribution
 

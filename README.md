@@ -20,13 +20,19 @@ Via [VHS-Decode](https://github.com/oyvindln/vhs-decode) (Tape Decoding) and [LD
 
 You can also generate a TBC file from normal video using [ld-chroma-encoder](https://happycube.github.io/ld-decode-docs/Tools/ld-chroma-encoder.html).
 
-## Where you can buy the FL2K and adapters
+## Where to Purchase the Hardware
 
-The FL2K [Link 1](https://www.aliexpress.com/item/1005002872152601.html?) / [Link 2](https://www.reichelt.de/de/de/adapterkabel-usb-3-0-stecker-vga-buchse-schwarz-delock-62738-p287335.html)
+The FL2K:
+* [reichelt.de](https://www.reichelt.de/de/de/adapterkabel-usb-3-0-stecker-vga-buchse-schwarz-delock-62738-p287335.html)(Germany)
+* [amazon.com](https://www.amazon.com/dp/B0BZWTP2H4)(USA)
 
-VGA to RCA [Aliexpress](https://www.aliexpress.com/item/1005002872152601.html?)
+VGA to RCA 
+* [Aliexpress](https://www.aliexpress.com/item/1005002872152601.html?)
+* [amazon.com](https://www.amazon.com/dp/B01GW6EAH4)(USA)
 
-VGA to BNC Male/Female [Amazon UK](https://www.amazon.co.uk/gp/product/B0033AF5Y0/) / [Amazon USA](https://www.amazon.com/s?k=VGA+to+BNC+Cable&crid=30JGI1TOFQ5I9&sprefix=vga+to+bnc+cable%2Caps%2C165&ref=nb_sb_noss_1)
+VGA to BNC
+* [amazon.co.uk](https://www.amazon.co.uk/gp/product/B0033AF5Y0/)(UK)
+* [amazon.com](https://www.amazon.com/dp/B0FG17PHWH)(USA)
 
 ## Hardware Setup
 
@@ -104,7 +110,7 @@ chmox +x compile.sh
 
  __NOTE: Only the _Red_ lead is supported for video output on Linux.__
 
-### Composite output on the red channel:
+### Composite Output on the Red Channel:
 
 Linux:
 
@@ -118,7 +124,7 @@ Windows:
 fl2k_file2.exe -s ntsc -R16 -tbcR -R example-decode.tbc
 ```
 
-### S-Video output with luma on the green channel and chroma on the blue channel:
+### S-Video Output with Luma on the Green Channel and Chroma on the Blue Channel:
 
 Linux:
 

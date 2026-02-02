@@ -18,7 +18,7 @@ A TBC (.tbc) file is a digital _Time Base Corrected_, lossless, 16-bit video fil
 
 Via [VHS-Decode](https://github.com/oyvindln/vhs-decode) (Tape Decoding) and [LD-Decode](https://github.com/happycube/ld-decode) (LaserDisc Decoding) or [CVBS-Decode](https://github.com/oyvindln/vhs-decode/wiki/CVBS-Composite-Decode) (Composite Decoding).
 
-You can also generate a TBC file from normal video using [ld-chroma-encoder](https://github.com/happycube/ld-decode/wiki/ld-chroma-encoder).
+You can also generate a TBC file from normal video using [ld-chroma-encoder](https://happycube.github.io/ld-decode-docs/Tools/ld-chroma-encoder.html).
 
 ## Where you can buy the FL2K and adapters
 
@@ -58,13 +58,11 @@ Then select and replace the driver with `libusb-win32 (v1.2.6.0)` using the [Zag
 
 Simply download the latest [Windows release](https://github.com/vrunk11/fl2k_2/releases). and decompress the `.zip` file.
 
-For GUI users, open the `fl2k_2.bat` file.
-
-For CLI users, open a Command Prompt window and change to the directory your files are in. See the section below on _Usage_ for running the application.
+Open a Command Prompt window and change to the directory your files are in. See the section below on _Usage_ for running the application.
 
 ### Linux
 
-__NOTE: The Linux version currently does not work as expected. Follow the below at your own risk.__
+__NOTE: The Linux version currently does not work as expected, no video output is created. Follow the below at your own risk.__
 
 The instructions below assume a non-root, `sudo`-capable user on a Debian-based distribution.
 
@@ -104,7 +102,7 @@ chmox +x compile.sh
 
 ## Usage
 
-__NOTE: Only the _Red_ lead is supported for video output.__
+ __NOTE: Only the _Red_ lead is supported for video output on Linux.__
 
 ### Composite output on the red channel:
 

@@ -75,19 +75,7 @@ The instructions below assume a non-root, `sudo`-capable user on a Debian-based 
 First we need to download dependencies:
 
 ```
-sudo apt update && sudo apt install libusb-1.0-0-dev libsoxr-dev libsoxr0 libsoxr-lsr0 git
-```
-
-We can install the original `osmo-fl2k` tools using these steps:
-
-```
-git clone https://gitea.osmocom.org/sdr/osmo-fl2k
-mkdir osmo-fl2k/build
-cd osmo-fl2k/build
-cmake ../ -DINSTALL_UDEV_RULES=ON
-make -j 3
-sudo make install
-sudo ldconfig
+sudo apt update && sudo apt install libusb-1.0-0-dev libsoxr-dev libsoxr0 libsoxr-lsr0 git make cmake -y
 ```
 
 Before being able to use the device as a non-root user, the udev rules need to be reloaded:
@@ -102,8 +90,20 @@ To install the TBC player:
 git clone https://github.com/vrunk11/fl2k_2.git fl2k-tbc-player
 cd fl2k-tbc-player
 wget -P include/ https://raw.githubusercontent.com/chirlu/soxr/refs/heads/master/src/soxr.h
-chmox +x compile.sh
+chmod +x compile.sh
 ./compile.sh
+```
+
+We can install the original `osmo-fl2k` tools using these steps (optional):
+
+```
+git clone https://gitea.osmocom.org/sdr/osmo-fl2k
+mkdir osmo-fl2k/build
+cd osmo-fl2k/build
+cmake ../ -DINSTALL_UDEV_RULES=ON
+make -j 3
+sudo make install
+sudo ldconfig
 ```
 
 ## Usage

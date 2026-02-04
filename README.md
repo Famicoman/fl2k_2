@@ -109,6 +109,12 @@ sudo ldconfig
 ## Usage
 
  __NOTE: Only the _Red_ lead is supported for video output on Linux.__
+ 
+ The following assumes you are using the video player with a `.tbc` file, for example, an NTSC VHS `.flac` file would be decoded with [VHS-Decode](https://github.com/oyvindln/vhs-decode) as follows:
+ 
+ ```
+ decode.py vhs --threads 2 --tf vhs --ts SP -f 20 --ntsc --ire0_adjust SAMPLE-NTSC-SP-vhs-rf-20msps-u8.flac example-decode
+ ```
 
 ### Composite Output on the Red Channel:
 
